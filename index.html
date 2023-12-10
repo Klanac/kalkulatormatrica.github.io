@@ -3,7 +3,7 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Expression Solver</title>
+    <title>Matrix Calculator</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.0/math.min.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,25 +25,25 @@
         <div class="daddy">
             <div class="M1">
                 <form action="">
-                    <input id="box00" class="polje">
-                    <input id="box01" class="polje">
-                    <input id="box02" class="polje">
-                    <input id="box03" class="polje">
+                    <input id="A00" class="polje" value="">
+                    <input id="A01" class="polje" value="">
+                    <input id="A02" class="polje" value="">
+                    <input id="A03" class="polje" value="">
                     <br>
-                    <input id="box10" class="polje">
-                    <input id="box11" class="polje">
-                    <input id="box12" class="polje">
-                    <input id="box13" class="polje">
+                    <input id="A10" class="polje" value="">
+                    <input id="A11" class="polje" value="">
+                    <input id="A12" class="polje" value="">
+                    <input id="A13" class="polje" value=""> 
                     <br>
-                    <input id="box20" class="polje">
-                    <input id="box21" class="polje">
-                    <input id="box22" class="polje">
-                    <input id="box23" class="polje">
+                    <input id="A20" class="polje" value="">
+                    <input id="A21" class="polje" value="">
+                    <input id="A22" class="polje" value=""> 
+                    <input id="A23" class="polje" value="">
                     <br>
-                    <input id="box30" class="polje">
-                    <input id="box31" class="polje">
-                    <input id="box32" class="polje">
-                    <input id="box33" class="polje">
+                    <input id="A30" class="polje" value="">
+                    <input id="A31" class="polje" value="">
+                    <input id="A32" class="polje" value="">
+                    <input id="A33" class="polje" value="">
                     <br>
                     <br>
                 </form>
@@ -56,25 +56,25 @@
         <div class="daddy">
             <div class="M2">
                 <form action="">
-                    <input id="box00" class="polje">
-                    <input id="box01" class="polje">
-                    <input id="box02" class="polje">
-                    <input id="box03" class="polje">
+                    <input id="B00" class="polje" value="">
+                    <input id="B01" class="polje" value="">
+                    <input id="B02" class="polje" value="">
+                    <input id="B03" class="polje" value="">
                     <br>
-                    <input id="box10" class="polje">
-                    <input id="box11" class="polje">
-                    <input id="box12" class="polje">
-                    <input id="box13" class="polje">
+                    <input id="B10" class="polje" value="">
+                    <input id="B11" class="polje" value="">
+                    <input id="B12" class="polje" value="">
+                    <input id="B13" class="polje" value="">
                     <br>
-                    <input id="box20" class="polje">
-                    <input id="box21" class="polje">
-                    <input id="box22" class="polje">
-                    <input id="box23" class="polje">
+                    <input id="B20" class="polje" value="">
+                    <input id="B21" class="polje" value="">
+                    <input id="B22" class="polje" value="">
+                    <input id="B23" class="polje" value="">
                     <br>
-                    <input id="box30" class="polje">
-                    <input id="box31" class="polje">
-                    <input id="box32" class="polje">
-                    <input id="box33" class="polje">
+                    <input id="B30" class="polje" value="">
+                    <input id="B31" class="polje" value="">
+                    <input id="B32" class="polje" value="">
+                    <input id="B33" class="polje" value="">
                     <br>
                     <br>
                 </form>
@@ -84,10 +84,10 @@
         <br>
         <div class="solve">
             <form action="">
-                <input type="text" value="Upiši jednadžbu " class="jednadzba"> <br>
+                <input type="text" value="Upiši jednadžbu " class="jednadzba" id="jednadzba"> <br>
                 <button class="potvrda" onclick="rijesiJednadzbu()">Izračunaj</button>
             </form>
         </div>
-        <script></script>
+        <script src="./matrix.js"></script>
     </body>
 </html>
