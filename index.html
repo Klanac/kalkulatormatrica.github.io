@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.0/math.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="./favicon.ico">
+    </head>
+
+    <body>
+        <div class="head">
+            <div class="naslov">
+                <h1>Matrix Calculator</h1>
+                <p class="credits">Created by Luka Bedić, Jan Hernaus, Roman Ilić & Fran Klanac</p>
+            </div>
+        </div>
+
+        <div class="matrice">
+            <h2>Matrica 1 (M1)</h2><br>
+        </div>
+        <div class="glavni">
+            <div class="M1">
+                <form action="">
+                    <input id="A00" class="polje" value="">
+                    <input id="A01" class="polje" value="">
+                    <input id="A02" class="polje" value="">
+                    <input id="A03" class="polje" value="">
+                    <br>
+                    <input id="A10" class="polje" value="">
+                    <input id="A11" class="polje" value="">
+                    <input id="A12" class="polje" value="">
+                    <input id="A13" class="polje" value=""> 
+                    <br>
+                    <input id="A20" class="polje" value="">
+                    <input id="A21" class="polje" value="">
+                    <input id="A22" class="polje" value=""> 
+                    <input id="A23" class="polje" value="">
+                    <br>
+                    <input id="A30" class="polje" value="">
+                    <input id="A31" class="polje" value="">
+                    <input id="A32" class="polje" value="">
+                    <input id="A33" class="polje" value="">
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="matrice">
+            <h2>Matrica 2 (M2)</h2><br>
+        </div>
+        <div class="glavni">
+            <div class="M2">
+                <form action="">
+                    <input id="B00" class="polje" value="">
+                    <input id="B01" class="polje" value="">
+                    <input id="B02" class="polje" value="">
+                    <input id="B03" class="polje" value="">
+                    <br>
+                    <input id="B10" class="polje" value="">
+                    <input id="B11" class="polje" value="">
+                    <input id="B12" class="polje" value="">
+                    <input id="B13" class="polje" value="">
+                    <br>
+                    <input id="B20" class="polje" value="">
+                    <input id="B21" class="polje" value="">
+                    <input id="B22" class="polje" value="">
+                    <input id="B23" class="polje" value="">
+                    <br>
+                    <input id="B30" class="polje" value="">
+                    <input id="B31" class="polje" value="">
+                    <input id="B32" class="polje" value="">
+                    <input id="B33" class="polje" value="">
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+
+        <br>
+        <div class="solve">
+            <form action="" id="racunaj">
+                <input type="text" class="jednadzba" id="jednadzba"> <br>
+                <button class="potvrda">Izračunaj</button>
+            </form>
+        </div>
+        <div class="matrice">
+            <h2 id="cijeliBr"></p>
+        </div>
+        <div class="glavni rez" id="rezic">
+            <div class="naslov rezultat">
+                <div id="rezultat0">
+                    <div class="rezred" id="rez00">
+
+                    </div>
+                    <div class="rezred" id="rez01">
+                        
+                    </div>
+                    <div class="rezred" id="rez02">
+                        
+                    </div>
+                    <div class="rezred" id="rez03">
+                        
+                    </div>
+                </div>
+                <div id="rezultat1">
+                    <div class="rezred" id="rez10">
+
+                    </div>
+                    <div class="rezred" id="rez11">
+                        
+                    </div>
+                    <div class="rezred" id="rez12">
+                        
+                    </div>
+                    <div class="rezred" id="rez13">
+                        
+                    </div>
+                </div>
+                <div id="rezultat2">
+                    <div class="rezred" id="rez20">
+
+                    </div>
+                    <div class="rezred" id="rez21">
+                        
+                    </div>
+                    <div class="rezred" id="rez22">
+                        
+                    </div>
+                    <div class="rezred" id="rez23">
+                        
+                    </div>
+                </div>
+                <div id="rezultat3">
+                    <div class="rezred" id="rez30">
+
+                    </div>
+                    <div class="rezred" id="rez31">
+                        
+                    </div>
+                    <div class="rezred" id="rez32">
+                        
+                    </div>
+                    <div class="rezred" id="rez33">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="./matrix.js"></script>
+    </body>
+</html>
