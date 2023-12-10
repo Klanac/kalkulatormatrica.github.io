@@ -14,8 +14,8 @@ function rijesiJednadzbu() {
     try {
         var matrica_a = matricaA();
         var matrica_b = matricaB();
-        jednadzba = jednadzba.replace(/M1/g, matrica_a);
-        jednadzba = jednadzba.replace(/M2/g, matrica_b);
+        jednadzba = jednadzba.replace(/MA/g, matrica_a);
+        jednadzba = jednadzba.replace(/MB/g, matrica_b);
 
         var trans_a = matrixString(trans(stringMatrix(matrica_a)));
         var trans_b = matrixString(trans(stringMatrix(matrica_b)));
