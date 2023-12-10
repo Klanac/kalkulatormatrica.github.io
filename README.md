@@ -35,6 +35,11 @@ Matrix Calculator je razvijen s ljubavlju i predanošću od strane tima stručnj
 4. Roman Ilić
 - Odgovoran za HTML/CSS, testiranje koda, rađenje dokumentacije i vođenje evidencije sastanaka tima.
 
+# 📚 Custom Library
+Matrix Calculator je prvenstveno trebao biti napravljen koristeći naš custom library, no iz tehničkih razloga to nije bilo izvedivo. No, za svaki slučaj, u ovom GitHub Repositoryu nalazi se i taj library koji vam omogućuje transponiranje matrica i sl.
+Umjesto custom librarya, ovaj kalkulator je napravljen koristeći neke druge tehnologije 😊
+Custom Library se nalazi na [drugom repositoryu](https://github.com/KOMKO190/MatrixCalculator/tree/test1/Matrix%20Library%20by%20Francek), a tamo se nalazi i [README](https://github.com/KOMKO190/MatrixCalculator/blob/test1/Matrix%20Library%20by%20Francek/README_MATRIX.txt) file koji pokazuje kako se koristi library.
+
 Zahvaljujemo svim članovima na njihovom doprinosu u stvaranju Matrix Calculator aplikacije!
 
 Hvala vam što koristite Matrix Calculator! 🎉
