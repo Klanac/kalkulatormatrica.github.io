@@ -22,17 +22,19 @@ Ovaj kalkulator matrica je dostupan pod MIT licencom.
 Matrix Calculator je razvijen s ljubavlju i predanošću od strane tima stručnjaka za matematiku i programiranje. Naš sastav je:
 
 1. Fran Klanac
-Glavni programer
-[GitHub profil](https://github.com/Klanac)
+- Glavni programer
+- [GitHub profil](https://github.com/Klanac)
 
 2. Luka Bedić
-Glavni programer
-[GitHub profil](https://github.com/KOMKO190)
+- Glavni programer
+- [GitHub profil](https://github.com/KOMKO190)
 
 3. Jan Hernaus
-Odgovoran za HTML/CSS, testiranje koda i optimizaciju koda
+- Odgovoran za HTML/CSS, testiranje koda i optimizaciju koda
 
 4. Roman Ilić
-Odgovoran za HTML/CSS, testiranje koda, rađenje dokumentacije i vođenje evidencije sastanaka tima.
+- Odgovoran za HTML/CSS, testiranje koda, rađenje dokumentacije i vođenje evidencije sastanaka tima.
+
+Zahvaljujemo svim članovima na njihovom doprinosu u stvaranju Matrix Calculator aplikacije!
 
 Hvala vam što koristite Matrix Calculator! 🎉
