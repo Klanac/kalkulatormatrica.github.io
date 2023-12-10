@@ -143,6 +143,17 @@ body{
 
 
 
+@media screen and (min-width: 721px) {
+    input {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    input {
+        width: 15%;
+    }
+}
 
 
 @media screen and (min-width: 721px) {
@@ -154,5 +165,19 @@ body{
 @media screen and (max-width: 720px) {
     input {
         width: 15%;
+    }
+}
+
+@media screen and (min-width: 721px) {
+
+    input.jednadzba, button.potvrda {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    input.jednadzba, button.potvrda {
+        width: 80%;
     }
 }
