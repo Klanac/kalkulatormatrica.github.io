@@ -6,6 +6,7 @@ var ispis = document.getElementById("rezic");
 var ispis_ci = document.getElementById("cijeliBr");
 var red;
 
+
 function rijesiJednadzbu() {
     
     var jednadzba = document.getElementById("jednadzba").value;
@@ -15,12 +16,16 @@ function rijesiJednadzbu() {
         var matrica_b = matricaB();
         jednadzba = jednadzba.replace(/M1/g, matrica_a);
         jednadzba = jednadzba.replace(/M2/g, matrica_b);
+
+        var trans_a = matrixString(trans(stringMatrix(matrica_a)));
+        var trans_b = matrixString(trans(stringMatrix(matrica_b)));
+        
+        jednadzba = jednadzba.replace(/TransA/g, trans_a);
+        jednadzba = jednadzba.replace(/TransB/g, trans_b);
         
         const result = math.evaluate(jednadzba);
         
-        
         localStorage.setItem("rezultat", result);
-        
         
     } catch (error) {
         alert('Upisao si krivo matricu/jednadžbu:', error.message);
@@ -60,6 +65,49 @@ racunaj.addEventListener("submit", function(event){
         }
     }
 });
+
+function matrixString(matrica) {
+    if (!Array.isArray(matrica) || matrica.length === 0 || !Array.isArray(matrica[0])) {
+        return "[]";
+    }
+
+    let matrixString = "[" + matrica.map(row => "[" + row.join(",") + "]").join(",") + "]";
+
+    return matrixString;
+}
+
+function stringMatrix(str) {
+    try {
+        str = str.trim().replace(/^\[|\]$/g, '');
+
+        const rows = str.split('],[');
+
+        const matrix = rows.map(row => {
+            row = row.replace(/^\[|\]$/g, '');
+
+            return row.split(',').map(Number);
+        });
+
+        return matrix;
+    } catch (error) {
+        throw new Error('Nije moguće pretvoriti string u matricu.');
+    }
+}
+
+function trans(matrica){
+    let rez = [];
+    let rez_red = [];
+
+    for(let i = 0; i < matrica[0].length; i++){
+        for(let j = 0; j < matrica.length; j++){
+            rez_red.push(matrica[j][i]);
+        }
+        rez.push(rez_red);
+        rez_red = [];
+    }
+
+    return rez;
+}
 
 function matricaA(){
 
