@@ -67,29 +67,14 @@ racunaj.addEventListener("submit", function(event){
     }
 });
 
-function determinanta(matrica) {
-    // Tu racunam redove i stupce da ne pisem kasnije stalno
-    const redovi = matrica.length;
-    const stupci = matrica[0].length;
-
-    // Provjera je li je matrica kvadratna
-    if (redovi !== stupci) {
-        throw new Error('Matrica mora biti kvadratna za Laplaceov razvoj.');
+function matrixString(matrica) {
+    if (!Array.isArray(matrica) || matrica.length === 0 || !Array.isArray(matrica[0])) {
+        return "[]";
     }
 
-    // Ako je matrica 1x1, determinanta je vrijednost jedinog elementa
-    if (redovi === 1) {
-        return matrica[0][0];
-    }
+    let matrixString = "[" + matrica.map(row => "[" + row.join(",") + "]").join(",") + "]";
 
-    // Laplaceov razvoj po prvoj vrsti
-    let det = 0;
-    for (let j = 0; j < stupci; j++) {
-        const kofaktorVrste = matrica[0][j] * cofactor(matrica, 0, j);
-        det += kofaktorVrste;
-    }
-
-    return det;
+    return matrixString;
 }
 
 function stringMatrix(str) {
