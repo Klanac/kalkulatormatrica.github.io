@@ -55,6 +55,8 @@ body{
     height: 50px;
     font-size: larger;    
     font-family: Kanit;
+    border-radius: 15px;
+    border: 3px solid black;
 }
 .naslov{
     background-color: #F4D19D;
@@ -76,8 +78,12 @@ body{
     height: 50px;
     font-size: 36px;
     font-family: Kanit;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    border:none;
+    box-shadow: 0px 0px 20px;
 }
+
 .credits{
     display: flex;
     justify-content: center;
