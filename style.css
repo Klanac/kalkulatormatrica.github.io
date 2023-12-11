@@ -40,11 +40,14 @@ body{
     
 }
 
-.manji-razmak{
-    line-height: 0.5;
+.bottom-razmak{
+    margin-bottom: 30px;
 }
-.veci-razmak{
-    line-height: 3;
+.top-razmak{
+    margin-top: 30px;
+}
+.razmak{
+    line-height: 0.5;
 }
 .polje, .rezred {
     background-color: #DC8686;
