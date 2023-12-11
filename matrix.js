@@ -14,14 +14,15 @@ function rijesiJednadzbu() {
     try {
         var matrica_a = matricaA();
         var matrica_b = matricaB();
-        jednadzba = jednadzba.replace(/MA/g, matrica_a);
-        jednadzba = jednadzba.replace(/MB/g, matrica_b);
 
         var trans_a = matrixString(trans(stringMatrix(matrica_a)));
         var trans_b = matrixString(trans(stringMatrix(matrica_b)));
-        
-        jednadzba = jednadzba.replace(/TransA/g, trans_a);
-        jednadzba = jednadzba.replace(/TransB/g, trans_b);
+
+        jednadzba = jednadzba.replace(/TransM1/g, trans_a);
+        jednadzba = jednadzba.replace(/TransM2/g, trans_b);
+
+        jednadzba = jednadzba.replace(/M1/g, matrica_a);
+        jednadzba = jednadzba.replace(/M2/g, matrica_b);
         
         const result = math.evaluate(jednadzba);
         
@@ -66,14 +67,29 @@ racunaj.addEventListener("submit", function(event){
     }
 });
 
-function matrixString(matrica) {
-    if (!Array.isArray(matrica) || matrica.length === 0 || !Array.isArray(matrica[0])) {
-        return "[]";
+function determinanta(matrica) {
+    // Tu racunam redove i stupce da ne pisem kasnije stalno
+    const redovi = matrica.length;
+    const stupci = matrica[0].length;
+
+    // Provjera je li je matrica kvadratna
+    if (redovi !== stupci) {
+        throw new Error('Matrica mora biti kvadratna za Laplaceov razvoj.');
     }
 
-    let matrixString = "[" + matrica.map(row => "[" + row.join(",") + "]").join(",") + "]";
+    // Ako je matrica 1x1, determinanta je vrijednost jedinog elementa
+    if (redovi === 1) {
+        return matrica[0][0];
+    }
 
-    return matrixString;
+    // Laplaceov razvoj po prvoj vrsti
+    let det = 0;
+    for (let j = 0; j < stupci; j++) {
+        const kofaktorVrste = matrica[0][j] * cofactor(matrica, 0, j);
+        det += kofaktorVrste;
+    }
+
+    return det;
 }
 
 function stringMatrix(str) {
