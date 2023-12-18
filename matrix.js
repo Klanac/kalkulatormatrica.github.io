@@ -6,36 +6,36 @@ var racunaj = document.getElementById("racunaj");
 var ispis = document.getElementById("rezic");
 var ispis_ci = document.getElementById("cijeliBr");
 var red;
-
+var trigger;
 //funkcija koja se izvršava klikom na gumb
 function rijesiJednadzbu() {
     
     try {
-    //uzima se id polja gdje je korisnik upisivao jednadzbu
-    var jednadzba = document.getElementById("jednadzba").value;
+        //uzima se id polja gdje je korisnik upisivao jednadzbu
+        var jednadzba = document.getElementById("jednadzba").value;
 
-    //matrice se uzimaju iz polja i pretvaraju u string
-    var matrica_a = matricaA();
-    var matrica_b = matricaB();
-    
-    //matrice se iz stringa pretvaraju u matricu s kojom funkcija trans() može računat te se natrag pretvaraju u string
-    var trans_a = matrixString(trans(stringMatrix(matrica_a)));
-    var trans_b = matrixString(trans(stringMatrix(matrica_b)));
-    
-    //matrice se iz stringa pretvaraju u matricu s kojom funkcija determinanta() može računat te se natrag pretvaraju u string pomoću JSON.stringify
-    //JSON.stringify može pretvoriti ne samo iz matrice u string nego bilo koji broj u string.
+        //matrice se uzimaju iz polja i pretvaraju u string
+        var matrica_a = matricaA();
+        var matrica_b = matricaB();
+        
+        //matrice se iz stringa pretvaraju u matricu s kojom funkcija trans() može računat te se natrag pretvaraju u string
+        var trans_a = matrixString(trans(stringMatrix(matrica_a)));
+        var trans_b = matrixString(trans(stringMatrix(matrica_b)));
+        
+        //matrice se iz stringa pretvaraju u matricu s kojom funkcija determinanta() može računat te se natrag pretvaraju u string pomoću JSON.stringify
+        //JSON.stringify može pretvoriti ne samo iz matrice u string nego bilo koji broj u string.
 
-    //provjerava se je li matrica a kvadratna i ako je izvršava se računanje determinante
-    if((stringMatrix(matrica_a))[0].length === (stringMatrix(matrica_a)).length){
-        var det_a = JSON.stringify(determinanta(stringMatrix(matrica_a)));
-        jednadzba = jednadzba.replace(/DetM1/g, det_a);
-    }
+        //provjerava se je li matrica a kvadratna i ako je izvršava se računanje determinante
+        if((stringMatrix(matrica_a))[0].length === (stringMatrix(matrica_a)).length){
+            var det_a = JSON.stringify(determinanta(stringMatrix(matrica_a)));
+            jednadzba = jednadzba.replace(/DetM1/g, det_a);
+        }
 
-    //provjerava se je li matrica b kvadratna i ako je izvršava se računanje determinante
-    if((stringMatrix(matrica_b))[0].length === (stringMatrix(matrica_b)).length){
-        var det_b = JSON.stringify(determinanta(stringMatrix(matrica_b)));
-        jednadzba = jednadzba.replace(/DetM2/g, det_b);
-    }
+        //provjerava se je li matrica b kvadratna i ako je izvršava se računanje determinante
+        if((stringMatrix(matrica_b))[0].length === (stringMatrix(matrica_b)).length){
+            var det_b = JSON.stringify(determinanta(stringMatrix(matrica_b)));
+            jednadzba = jednadzba.replace(/DetM2/g, det_b);
+        }
         
         //gledaju se prvo u jednadžbi koju je korinsik zapisao je li postoje funkcije Trans i Det
         //ako postoje prvo se one mijenjaju sa izračunatim vrijednostima jer, ako promijenimo prvo M1 to jest M2, u varijabli više neće postojati TransM1 nego izračunata vrijednost transponirane M1 matrice u obliku [[],[],[]]
@@ -53,11 +53,11 @@ function rijesiJednadzbu() {
         
         //rezultat se sprema na local disku pod nazivom "rezultat" zbog osježavanja stranice prilikom pritiska na gumb i resetiranja podataka
         localStorage.setItem("rezultat", result);
-        
+        trigger = false;
     } catch (error) {
         //ako se u procesu dogodi greška ispisat će se poruka:
         alert('Upisao si krivo matricu/jednadžbu:', error.message);
-        
+        trigger =  true;
     }
 }
 
@@ -70,7 +70,7 @@ racunaj.addEventListener("submit", function(event){
     //uzima se dobiveni rezultat
     var pohrana = localStorage.getItem("rezultat");
     //U SLUČAJU DA JE REZULTAT VALIDAN, a je u 99,99999999% slučajeva jer uvijek ispiše pogrešku na ekran...
-    if(pohrana){ 
+    if(pohrana && !trigger){ 
         //pretvara se rezultat dobiveni iz stringa u broj/matricu
         let str = JSON.parse(pohrana);
         //u slučaju dda je rezultat matrica izvršava se sljedeći kod:
@@ -105,6 +105,9 @@ racunaj.addEventListener("submit", function(event){
             ispis.style.visibility = "hidden";
             ispis_ci.innerHTML = "Rezultat: " + str;
         }
+    }else{
+        ispis_ci.style.visibility = "hidden";
+        ispis.style.visibility = "hidden";
     }
 });
 
