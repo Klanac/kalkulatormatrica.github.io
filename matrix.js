@@ -10,33 +10,42 @@ var red;
 //funkcija koja se izvršava klikom na gumb
 function rijesiJednadzbu() {
     
+    try {
     //uzima se id polja gdje je korisnik upisivao jednadzbu
     var jednadzba = document.getElementById("jednadzba").value;
 
-    try {
-        //matrice se uzimaju iz polja i pretvaraju u string
-        var matrica_a = matricaA();
-        var matrica_b = matricaB();
-        
-        //matrice se iz stringa pretvaraju u matricu s kojom funkcija trans() može računat te se natrag pretvaraju u string
-        var trans_a = matrixString(trans(stringMatrix(matrica_a)));
-        var trans_b = matrixString(trans(stringMatrix(matrica_b)));
-        
-        //matrice se iz stringa pretvaraju u matricu s kojom funkcija determinanta() može računat te se natrag pretvaraju u string pomoću JSON.stringify
-        //JSON.stringify može pretvoriti ne samo iz matrice u string nego bilo koji broj u string.
+    //matrice se uzimaju iz polja i pretvaraju u string
+    var matrica_a = matricaA();
+    var matrica_b = matricaB();
+    
+    //matrice se iz stringa pretvaraju u matricu s kojom funkcija trans() može računat te se natrag pretvaraju u string
+    var trans_a = matrixString(trans(stringMatrix(matrica_a)));
+    var trans_b = matrixString(trans(stringMatrix(matrica_b)));
+    
+    //matrice se iz stringa pretvaraju u matricu s kojom funkcija determinanta() može računat te se natrag pretvaraju u string pomoću JSON.stringify
+    //JSON.stringify može pretvoriti ne samo iz matrice u string nego bilo koji broj u string.
+
+    //provjerava se je li matrica a kvadratna i ako je izvršava se računanje determinante
+    if((stringMatrix(matrica_a))[0].length === (stringMatrix(matrica_a)).length){
         var det_a = JSON.stringify(determinanta(stringMatrix(matrica_a)));
+        jednadzba = jednadzba.replace(/DetM1/g, det_a);
+    }
+
+    //provjerava se je li matrica b kvadratna i ako je izvršava se računanje determinante
+    if((stringMatrix(matrica_b))[0].length === (stringMatrix(matrica_b)).length){
         var det_b = JSON.stringify(determinanta(stringMatrix(matrica_b)));
+        jednadzba = jednadzba.replace(/DetM2/g, det_b);
+    }
         
         //gledaju se prvo u jednadžbi koju je korinsik zapisao je li postoje funkcije Trans i Det
-        //ako postoje prvo se one mijenjaju sa izračunatim vrijednostima jer, ako promijenimo prvo M1 to jest M2, u varijabli više neće postojati DetM1 nego Det[[],[],[]]
-
+        //ako postoje prvo se one mijenjaju sa izračunatim vrijednostima jer, ako promijenimo prvo M1 to jest M2, u varijabli više neće postojati TransM1 nego izračunata vrijednost transponirane M1 matrice u obliku [[],[],[]]
+        
         jednadzba = jednadzba.replace(/TransM1/g, trans_a);
         jednadzba = jednadzba.replace(/TransM2/g, trans_b);
-        jednadzba = jednadzba.replace(/DetM1/g, det_a);
-        jednadzba = jednadzba.replace(/DetM2/g, det_b);
         
         jednadzba = jednadzba.replace(/M1/g, matrica_a);
         jednadzba = jednadzba.replace(/M2/g, matrica_b);
+        
         
         //funkcija math.evaluate() je iz drugog library-a i bilo bi prekomplicirano samostalno uzimat iz izraza vrijednosti i računati
         //funkcija računa cijelu jednadžbu kada je sve potrebno zamijenjeno
