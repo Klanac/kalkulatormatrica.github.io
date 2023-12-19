@@ -45,4 +45,4 @@ Sastanke smo održavali putem Discord aplikacije 4.12.2023. i 10.12.2023. (od 2:
 
 Zahvaljujemo svim članovima na njihovom doprinosu u stvaranju Matrix Calculator aplikacije!
 
-Hvala vam što koristite Matrix Calculator! 🎉
+# Hvala vam što koristite Matrix Calculator! 🎉
