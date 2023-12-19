@@ -40,9 +40,6 @@ Matrix Calculator je prvenstveno trebao biti napravljen koristeći naš custom l
 Umjesto custom librarya, ovaj kalkulator je napravljen koristeći neke druge tehnologije 😊
 Custom Library se nalazi na [drugom repositoryu](https://github.com/Klanac/Matrix-Library), a tamo se nalazi i [README](https://github.com/Klanac/Matrix-Library/blob/main/README_HR.md) file koji pokazuje kako se koristi library.
 
-# 🤝 Sastanci
-Sastanke smo održavali putem Discord aplikacije 4.12.2023. i 10.12.2023. (od 2:33 do 4 ujutro 😊) gdje smo rasporedili poslove i spojili sve u funkcionalnu web stranicu.
-
 Zahvaljujemo svim članovima na njihovom doprinosu u stvaranju Matrix Calculator aplikacije!
 
 # Hvala vam što koristite Matrix Calculator! 🎉
