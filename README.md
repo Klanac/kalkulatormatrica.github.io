@@ -30,10 +30,10 @@ Matrix Calculator je razvijen s ljubavlju i predanošću od strane tima stručnj
 - [GitHub profil](https://github.com/KOMKO190)
 
 **3. Jan Hernaus**
-- Odgovoran za HTML/CSS, testiranje koda, rađenje dokumentacije, optimizaciju koda i matematički dio.
+- Odgovoran za HTML/CSS, testiranje koda, optimizaciju koda i sl.
 
 **4. Roman Ilić**
-- Odgovoran za HTML/CSS, testiranje koda, rađenje dokumentacije, vođenje evidencije sastanaka tima i matematički dio.
+- Odgovoran za HTML/CSS, testiranje koda.
 
 # 📚 Custom Library
 Matrix Calculator je prvenstveno trebao biti napravljen koristeći naš custom library, no iz tehničkih razloga to nije bilo izvedivo. No, za svaki slučaj, u ovom GitHub Repositoryu nalazi se i taj library koji vam omogućuje transponiranje matrica i sl.
